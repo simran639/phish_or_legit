@@ -7,7 +7,9 @@ export interface GameItem {
   explanation: string;
   indicators: string[];
   difficulty: 'easy' | 'medium' | 'hard';
-  screenshot?: string;
+  phishingScreenshot: string;
+  legitimateScreenshot: string;
+  correctChoice: 'left' | 'right'; // Which side has the phishing attempt
 }
 
 export interface GameState {
