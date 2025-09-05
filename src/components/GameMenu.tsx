@@ -1,5 +1,5 @@
 import React from 'react';
-import { Play, Timer, Sword, Trophy, Settings, Info, AlertTriangle, CheckCircle } from 'lucide-react';
+import { Play, Timer, Sword, Trophy, Settings, Info} from 'lucide-react';
 
 interface GameMenuProps {
   onStartGame: (mode: 'classic' | 'timed' | 'challenge', difficulty: 'easy' | 'medium' | 'hard' | 'mixed') => void;

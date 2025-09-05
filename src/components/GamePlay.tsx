@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowLeft, ArrowRight, Home } from 'lucide-react';
 import { GameHeader } from './GameHeader';
 import { GameCard } from './GameCard';

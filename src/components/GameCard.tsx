@@ -1,4 +1,3 @@
-import React from 'react';
 import { Mail, MessageSquare, Globe, AlertTriangle, CheckCircle } from 'lucide-react';
 import { GameItem } from '../types/game';
 
