@@ -7,23 +7,23 @@ export const gameItems: GameItem[] = [
     type: 'email',
     title: 'Congratulations Winner!',
     content: `From: Nigerian Prince <prince@gmail.com>
-To: you@email.com
-Subject: YOU WON $1,000,000 USD!!!
+    To: you@email.com
+    Subject: YOU WON $1,000,000 USD!!!
 
-CONGRATULATIONS!!! 
+    CONGRATULATIONS!!! 
 
-You have been selected as the LUCKY WINNER of our international lottery! You have won the sum of ONE MILLION US DOLLARS ($1,000,000.00).
+    You have been selected as the LUCKY WINNER of our international lottery! You have won the sum of ONE MILLION US DOLLARS ($1,000,000.00).
 
-To claim your prize, please send us your bank account details immediately:
-- Full Name
-- Bank Account Number  
-- Social Security Number
-- Copy of ID
+    To claim your prize, please send us your bank account details immediately:
+    - Full Name
+    - Bank Account Number  
+    - Social Security Number
+    - Copy of ID
 
-Contact us urgently: prince@gmail.com
+    Contact us urgently: prince@gmail.com
 
-Best regards,
-Nigerian Prince`,
+    Best regards,
+    Nigerian Prince`,
     isPhishing: true,
     explanation: 'This is a classic advance-fee scam with multiple red flags.',
     indicators: [
@@ -87,6 +87,34 @@ Amazon Customer Service`,
     ],
     difficulty: 'easy'
   },
+  {
+    "id": "easy-4",
+    "type": "email",
+    "title": "Amazon Account Suspended",
+    "content": "Dear Customer, your Amazon account has been suspended due to suspicious activity. Please verify your information here: http://amazon-verification-login.com",
+    "isPhishing": true,
+    "explanation": "The email uses a fake login link to steal credentials.",
+    "indicators": [
+      "Suspicious domain (not amazon.com)",
+      "Urgency to verify account",
+      "Generic greeting (Dear Customer)"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "easy-5",
+    "type": "sms",
+    "title": "Bank OTP Request",
+    "content": "Your OTP for online banking is 764321. Do not share this with anyone. - XYZ Bank",
+    "isPhishing": false,
+    "explanation": "Legitimate banks send OTPs but never ask you to share them. This message contains no malicious links.",
+    "indicators": [
+      "No links included",
+      "Clear warning not to share",
+      "Comes from trusted bank source"
+    ],
+    "difficulty": "easy"
+  },
 
   // Medium Level - Fake Login Pages
   {
@@ -145,7 +173,20 @@ PayPal Security Team`,
     ],
     difficulty: 'medium'
   },
-
+  {
+    "id": "medium-3",
+    "type": "email",
+    "title": "University Exam Schedule",
+    "content": "Dear Student, your final exam schedule is now available on the official portal. Please log in at https://portal.university.edu/exams",
+    "isPhishing": false,
+    "explanation": "This is a legitimate university communication with a valid official link.",
+    "indicators": [
+      "Domain matches official university",
+      "No request for sensitive personal data",
+      "Contextually relevant content"
+    ],
+    "difficulty": "medium"
+  },
   // Hard Level - Spear Phishing
   {
     id: 'hard-1',
@@ -215,5 +256,49 @@ The Google Accounts team`,
       'Doesn\'t request sensitive information'
     ],
     difficulty: 'hard'
+  },
+   {
+    "id": "hard-3",
+    "type": "email",
+    "title": "Security Alert: Multiple Login Attempts",
+    "content": "We noticed multiple login attempts from unknown devices. Please confirm your identity here: http://google.verify-user-security.com",
+    "isPhishing": true,
+    "explanation": "Tries to impersonate Google with a fake verification link.",
+    "indicators": [
+      "Domain does not belong to Google",
+      "Creates fear/urgency",
+      "Generic formatting unlike real Google emails"
+    ],
+    "difficulty": "hard"
+  },
+   {
+    "id": "hard-4",
+    "type": "email",
+    "title": "CEO Urgent Request",
+    "content": "From: CEO <ceo@yourcompany-support.com>\nTo: finance@yourcompany.com\nSubject: URGENT: Wire Transfer Needed Today\n\nHi John,\n\nI’m currently in an important board meeting and can’t talk. We need to process an urgent payment for a new supplier before the end of the day, or we risk delaying a critical project. Please wire $49,750 to the following account:\n\nAccount Name: Global Solutions Ltd.\nIBAN: GB29 NWBK 6016 1331 9268 19\nBank: Northwest Bank, London\n\nMake sure this is handled immediately and confirm once done. Keep this confidential.\n\nThank you,\n[CEO Name]\n\n--\nYourCompany Leadership",
+    "isPhishing": true,
+    "explanation": "This is a business email compromise (BEC) scam impersonating the CEO, demanding an urgent wire transfer.",
+    "indicators": [
+      "Spoofed sender domain (yourcompany-support.com vs yourcompany.com)",
+      "Unusual urgency and secrecy request",
+      "Large wire transfer request to unknown supplier",
+      "CEO claims to be unavailable, creating pressure"
+    ],
+    "difficulty": "hard"
+  },
+   {
+    "id": "hard-5",
+    "type": "email",
+    "title": "Legitimate Finance Report Delivery",
+    "content": "From: Finance Department <finance@yourcompany.com>\nTo: board@yourcompany.com\nSubject: Q2 Financial Report - Confidential\n\nDear Board Members,\n\nAttached is the Q2 Financial Report including earnings, expenses, and forecasts. This report is intended for board review only and should not be shared externally.\n\nIf you have any questions, please reach out directly to the Finance office.\n\nBest regards,\n[Finance Director]\nFinance Department\nYourCompany Inc.",
+    "isPhishing": false,
+    "explanation": "This is a legitimate internal company email with correct sender domain and professional tone.",
+    "indicators": [
+      "Correct official company domain",
+      "Relevant context (quarterly report)",
+      "Professional formatting and no suspicious links",
+      "No urgency or request for sensitive data"
+    ],
+    "difficulty": "hard"
   }
 ];

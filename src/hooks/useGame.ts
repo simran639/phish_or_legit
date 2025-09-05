@@ -37,7 +37,13 @@ export function useGame() {
   };
 
   const startGame = (mode: 'classic' | 'timed' | 'challenge', difficulty: 'easy' | 'medium' | 'hard' | 'mixed') => {
-    const newItem = getRandomItem();
+    // Filter items using the selected difficulty
+    const filteredItems = difficulty === 'mixed'
+      ? gameItems
+      : gameItems.filter(item => item.difficulty === difficulty);
+
+    const newItem = filteredItems[Math.floor(Math.random() * filteredItems.length)];
+
     setGameState({
       ...initialGameState,
       gameMode: mode,
