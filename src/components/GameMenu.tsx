@@ -1,5 +1,5 @@
 import React from 'react';
-import { Play, Timer, Sword, Trophy, Settings, Info } from 'lucide-react';
+import { Play, Timer, Sword, Trophy, Settings, Info, AlertTriangle, CheckCircle } from 'lucide-react';
 
 interface GameMenuProps {
   onStartGame: (mode: 'classic' | 'timed' | 'challenge', difficulty: 'easy' | 'medium' | 'hard' | 'mixed') => void;
@@ -17,7 +17,7 @@ export function GameMenu({ onStartGame, onShowLeaderboard, onShowBadges }: GameM
           Phish or Legit?
         </h1>
         <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
-          Test your cybersecurity skills by identifying phishing attempts in emails, SMS, and websites. 
+          Test your cybersecurity skills by identifying phishing attempts in emails, SMS, and websites.
           Learn to spot the red flags that keep you safe online.
         </p>
       </div>
@@ -34,11 +34,10 @@ export function GameMenu({ onStartGame, onShowLeaderboard, onShowBadges }: GameM
             <button
               key={key}
               onClick={() => setSelectedDifficulty(key as any)}
-              className={`p-4 rounded-xl border-2 transition-all duration-200 ${
-                selectedDifficulty === key
-                  ? 'bg-blue-500 border-blue-400 text-white'
-                  : 'bg-white/20 border-white/30 text-white hover:bg-white/30'
-              }`}
+              className={`p-4 rounded-xl border-2 transition-all duration-200 ${selectedDifficulty === key
+                ? 'bg-blue-500 border-blue-400 text-white'
+                : 'bg-white/20 border-white/30 text-white hover:bg-white/30'
+                }`}
             >
               <div className="font-bold">{label}</div>
               <div className="text-sm opacity-80">{desc}</div>
@@ -84,7 +83,7 @@ export function GameMenu({ onStartGame, onShowLeaderboard, onShowBadges }: GameM
           <Trophy className="w-5 h-5" />
           Leaderboard
         </button>
-        
+
         <button
           onClick={onShowBadges}
           className="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold py-4 px-6 rounded-xl hover:bg-white/20 transition-all duration-200 flex items-center justify-center gap-3"

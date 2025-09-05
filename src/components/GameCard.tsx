@@ -52,17 +52,21 @@ export function GameCard({ item, onChoice, showFeedback, lastAnswer }: GameCardP
         <div className="flex gap-4">
           <button
             onClick={() => onChoice(true)}
-            className="flex-1 bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
+            className="flex-1 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-3 rounded-lg transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
           >
-            <AlertTriangle className="w-5 h-5 mx-auto mb-1" />
-            Phishing
+             <span className="flex items-center justify-center gap-2">
+    <AlertTriangle className="w-5 h-5" />
+    Phishing
+  </span>
           </button>
           <button
             onClick={() => onChoice(false)}
-            className="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
+            className="flex-1 bg-green-600 hover:bg-green-600 text-white font-bold py-2 px-3 rounded-lg transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
           >
-            <CheckCircle className="w-5 h-5 mx-auto mb-1" />
-            Legitimate
+            <span className="flex items-center justify-center gap-2">
+    <CheckCircle className="w-5 h-5" />
+    Legitimate
+  </span>
           </button>
         </div>
       ) : (
