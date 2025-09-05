@@ -99,12 +99,13 @@ export function GameMenu({ onStartGame, onShowLeaderboard, onShowBadges }: GameM
           <Info className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
           <div className="text-white/90">
             <h3 className="font-semibold mb-2">How to Play</h3>
+            <ul className="space-y-1 text-sm">
                 <li>• 📧 Analyze real-world emails, SMS messages, and websites</li>
                 <li>• 🔍 Look for suspicious domains, urgency tactics, and social engineering</li>
                 <li>• 🎯 Choose "Phishing" or "Legitimate" based on your analysis</li>
                 <li>• 📚 Learn from detailed explanations of actual attack techniques</li>
                 <li>• 🏆 Unlock achievements as you master cybersecurity skills</li>
-              <li>• Learn from detailed feedback to improve your skills</li>
+                <li>• Learn from detailed feedback to improve your skills</li>
             </ul>
           </div>
         </div>

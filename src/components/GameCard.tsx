@@ -68,11 +68,11 @@ export function GameCard({ item, onChoice, showFeedback, lastAnswer }: GameCardP
               </pre>
             </div>
           ) : (
+            <pre className="whitespace-pre-wrap font-mono">
               {item.content}
             </pre>
           )}
         </div>
-        </pre>
       </div>
 
       {!showFeedback ? (
