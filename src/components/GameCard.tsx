@@ -42,9 +42,36 @@ export function GameCard({ item, onChoice, showFeedback, lastAnswer }: GameCardP
         </div>
       </div>
       
+      {/* Screenshot Preview */}
+      {item.screenshot && (
+        <div className="mb-4">
+          <img 
+            src={item.screenshot} 
+            alt={`${item.type} example`}
+            className="w-full h-48 object-cover rounded-lg border-2 border-gray-200"
+          />
+          <p className="text-xs text-gray-500 mt-1 text-center">
+            Visual representation of {item.type === 'email' ? 'email interface' : item.type === 'sms' ? 'mobile message' : 'website'}
+          </p>
+        </div>
+      )}
+      
       <div className="bg-gray-50 rounded-lg p-4 mb-6 border-l-4 border-blue-500">
-        <pre className="whitespace-pre-wrap text-sm text-gray-700 font-mono leading-relaxed">
-          {item.content}
+        <div className="text-sm text-gray-700 leading-relaxed">
+          {item.type === 'website' ? (
+            <div className="space-y-3">
+              <div className="bg-gray-200 p-2 rounded text-xs font-mono">
+                🔒 {item.content.split('URL: ')[1]}
+              </div>
+              <pre className="whitespace-pre-wrap font-mono">
+                {item.content.split('URL: ')[0]}
+              </pre>
+            </div>
+          ) : (
+              {item.content}
+            </pre>
+          )}
+        </div>
         </pre>
       </div>
 
@@ -90,6 +117,14 @@ export function GameCard({ item, onChoice, showFeedback, lastAnswer }: GameCardP
                 <li key={index}>{indicator}</li>
               ))}
             </ul>
+          </div>
+          
+          <div className="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
+            <p className="text-xs text-blue-700">
+              💡 <strong>Learning Tip:</strong> {item.isPhishing 
+                ? 'Always verify suspicious emails by contacting the organization directly through official channels.' 
+                : 'Legitimate communications typically have consistent branding, official domains, and don\'t create false urgency.'}
+            </p>
           </div>
         </div>
       )}

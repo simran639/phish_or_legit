@@ -5,215 +5,544 @@ export const gameItems: GameItem[] = [
   {
     id: 'easy-1',
     type: 'email',
-    title: 'Congratulations Winner!',
-    content: `From: Nigerian Prince <prince@gmail.com>
+    title: 'Nigerian Prince Inheritance',
+    content: `From: Prince Abubakar <prince.abubakar@gmail.com>
 To: you@email.com
-Subject: YOU WON $1,000,000 USD!!!
+Subject: URGENT: $25,000,000 INHERITANCE FUND
 
-CONGRATULATIONS!!! 
+DEAR BENEFICIARY,
 
-You have been selected as the LUCKY WINNER of our international lottery! You have won the sum of ONE MILLION US DOLLARS ($1,000,000.00).
+I AM PRINCE ABUBAKAR FROM NIGERIA. MY FATHER LEFT $25 MILLION USD IN A BANK BEFORE HE DIED. I NEED YOUR HELP TO TRANSFER THIS MONEY TO YOUR ACCOUNT.
 
-To claim your prize, please send us your bank account details immediately:
-- Full Name
-- Bank Account Number  
-- Social Security Number
-- Copy of ID
+YOU WILL GET 40% OF THE MONEY ($10,000,000) FOR HELPING ME.
 
-Contact us urgently: prince@gmail.com
+PLEASE SEND ME:
+- YOUR FULL NAME
+- BANK ACCOUNT NUMBER
+- SOCIAL SECURITY NUMBER
+- COPY OF YOUR PASSPORT
 
-Best regards,
-Nigerian Prince`,
+TIME IS RUNNING OUT!!! REPLY IMMEDIATELY!!!
+
+GOD BLESS YOU,
+PRINCE ABUBAKAR`,
     isPhishing: true,
-    explanation: 'This is a classic advance-fee scam with multiple red flags.',
+    explanation: 'This is a classic advance-fee scam (419 scam) with multiple obvious red flags.',
     indicators: [
-      'Claims you won money you never entered to win',
-      'Requests sensitive personal information like SSN',
-      'Urgency tactics ("immediately", "urgently")',
-      'Suspicious sender address',
-      'Poor grammar and excessive capitalization'
+      'Claims inheritance from unknown person',
+      'Requests sensitive financial information',
+      'Poor grammar and excessive capitalization',
+      'Generic Gmail address for "royalty"',
+      'Unrealistic monetary amounts',
+      'Creates false urgency with "TIME IS RUNNING OUT"'
     ],
-    difficulty: 'easy'
+    difficulty: 'easy',
+    screenshot: 'https://images.pexels.com/photos/4439901/pexels-photo-4439901.jpeg'
   },
   {
     id: 'easy-2',
     type: 'sms',
-    title: 'Bank Alert',
-    content: `SMS from: +1-555-BANK
+    title: 'Fake Bank Security Alert',
+    content: `SMS from: +1-555-SECURITY
 
-ALERT: Your account has been COMPROMISED! Click link immediately to secure your account: http://bank-security.fake-site.com/login
+🚨 SECURITY ALERT 🚨
+Your Bank of America account has been LOCKED due to suspicious activity!
 
-Reply STOP to cancel.`,
+Click here NOW to unlock: http://bankofamerica-security.tk/unlock
+
+You have 1 HOUR or account will be CLOSED FOREVER!
+
+Reply STOP to opt out`,
     isPhishing: true,
-    explanation: 'Legitimate banks never send urgent security links via SMS.',
+    explanation: 'Banks never send urgent security links via SMS, and this uses classic fear tactics.',
     indicators: [
-      'Creates false sense of urgency',
-      'Suspicious URL not matching bank domain',
-      'Banks don\'t use generic phone numbers',
-      'Requests immediate action via link'
+      'Creates panic with "LOCKED" and "CLOSED FOREVER"',
+      'Suspicious domain (.tk is a free domain)',
+      'Real banks use official short codes, not phone numbers',
+      'Urgent 1-hour deadline pressure',
+      'Generic sender name instead of official bank code'
     ],
-    difficulty: 'easy'
+    difficulty: 'easy',
+    screenshot: 'https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg'
   },
   {
     id: 'easy-3',
     type: 'email',
-    title: 'Amazon Order Confirmation',
-    content: `From: Amazon <orders@amazon.com>
+    title: 'Legitimate Amazon Order',
+    content: `From: Amazon.com <ship-confirm@amazon.com>
 To: customer@email.com
-Subject: Your Order #112-7418965-8376235 has been shipped
+Subject: Your order of AirPods Pro has shipped
 
-Dear Valued Customer,
+Hello John Smith,
 
-Thank you for your order. Your package containing:
-- Apple AirPods Pro (2nd generation)
-- Order Total: $249.99
+Your order has been shipped and is on the way. You can track the status of this order, and all your orders, online by visiting Your Orders on Amazon.com.
 
-Your package has been shipped and will arrive within 2-3 business days.
+Order #114-3941234-1234567
+AirPods Pro (2nd generation) with MagSafe Case
+Qty: 1
+$249.00
 
-Track your order: https://amazon.com/track/112-7418965-8376235
+Shipped via: UPS
+Tracking number: 1Z999AA1234567890
+Estimated delivery: Tomorrow by 10 PM
 
-Thank you for choosing Amazon!
+Track your package: https://www.amazon.com/progress-tracker/package/ref=ppx_yo_dt_b_track_package
 
-Best regards,
-Amazon Customer Service`,
+Thanks for shopping with us.
+Amazon.com`,
     isPhishing: false,
-    explanation: 'This is a legitimate order confirmation with proper formatting and official branding.',
+    explanation: 'This is a legitimate Amazon shipping confirmation with proper formatting and official details.',
     indicators: [
-      'Official Amazon email domain',
+      'Official Amazon domain (ship-confirm@amazon.com)',
+      'Personalized greeting with actual name',
       'Proper order number format',
-      'Professional formatting and language',
-      'Valid Amazon tracking link',
-      'No requests for personal information'
+      'Valid tracking number format',
+      'Official Amazon tracking URL',
+      'Professional formatting without urgency tactics'
     ],
-    difficulty: 'easy'
+    difficulty: 'easy',
+    screenshot: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg'
   },
-  
-  // Medium Level - Fake Login Pages
+  {
+    id: 'easy-4',
+    type: 'sms',
+    title: 'Fake Package Delivery',
+    content: `SMS from: +1-800-FEDEX
+
+📦 FedEx Delivery Update
+
+Your package could not be delivered. Please confirm delivery details:
+http://fedex-redelivery.info/confirm?id=FX123456789
+
+Package will be returned if not confirmed within 24 hours.
+
+FedEx Customer Service`,
+    isPhishing: true,
+    explanation: 'FedEx uses official short codes and would never ask for confirmation via suspicious links.',
+    indicators: [
+      'Fake domain (fedex-redelivery.info instead of fedex.com)',
+      'Generic phone number instead of official FedEx short code',
+      'Creates urgency with 24-hour deadline',
+      'Requests confirmation for unordered package',
+      'Suspicious URL structure with tracking ID'
+    ],
+    difficulty: 'easy',
+    screenshot: 'https://images.pexels.com/photos/4439425/pexels-photo-4439425.jpeg'
+  },
+
+  // Medium Level - Sophisticated Phishing
   {
     id: 'medium-1',
     type: 'website',
-    title: 'Microsoft Login Page',
-    content: `Microsoft Account Sign In
+    title: 'Fake Microsoft Login',
+    content: `Microsoft
+Sign in to your account
 
-Email: [___________________]
-Password: [___________________]
+Email, phone, or Skype
+[____________________]
 
-[Sign in] [Forgot password?]
+Password
+[____________________]
 
-Stay signed in? ☐
+☐ Keep me signed in
 
-URL: https://microsft-login.secure-portal.net/signin`,
+[Sign in]
+
+Can't access your account?
+
+URL: https://login.microsoftonline.com.secure-auth.net/common/oauth2/authorize`,
     isPhishing: true,
-    explanation: 'This is a fake Microsoft login page with subtle URL manipulation.',
+    explanation: 'This fake login page uses a deceptive URL that appears legitimate at first glance.',
     indicators: [
-      'Misspelled domain (microsft instead of microsoft)',
-      'Suspicious subdomain structure',
-      'URL doesn\'t match official Microsoft domains',
-      'Missing proper SSL indicators'
+      'Domain is "secure-auth.net" not "microsoft.com"',
+      'Subdomain manipulation to look official',
+      'URL structure mimics real Microsoft OAuth',
+      'Missing official Microsoft security indicators',
+      'Suspicious extra domain in the URL path'
     ],
-    difficulty: 'medium'
+    difficulty: 'medium',
+    screenshot: 'https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg'
   },
   {
     id: 'medium-2',
     type: 'email',
-    title: 'PayPal Security Notice',
-    content: `From: PayPal Security <security@paypal-notification.com>
+    title: 'Fake PayPal Dispute',
+    content: `From: PayPal <service@paypal-resolution.com>
 To: user@email.com
-Subject: Action Required: Verify Your Account
+Subject: Case ID PP-D-40417: Dispute opened against your account
 
 Dear PayPal User,
 
-We have detected unusual activity on your account. For your security, we have temporarily limited your account access.
+A dispute has been opened against your account for transaction #4GF89023HN567234K.
 
-To restore full access, please verify your account information by clicking the link below:
+Dispute Amount: $847.99
+Merchant: TechGadgets Store
+Reason: Item not received
 
-Verify Account Now: https://paypal-security.verify-now.com/account
+To avoid account limitations, please review and respond to this dispute within 10 days.
 
-Please complete this verification within 24 hours to avoid permanent account suspension.
+Review Dispute: https://paypal-resolution.com/dispute/PP-D-40417
 
-If you did not request this, please contact PayPal Support immediately.
+If you believe this dispute was opened in error, please contact our Resolution Center immediately.
 
-PayPal Security Team`,
+PayPal Dispute Resolution Team`,
     isPhishing: true,
-    explanation: 'This email uses fear tactics and fake urgency to steal PayPal credentials.',
+    explanation: 'This email uses a fake PayPal domain and creates urgency around a fictional dispute.',
     indicators: [
-      'Fake PayPal domain (paypal-notification.com)',
-      'Generic greeting instead of your name',
+      'Fake domain "paypal-resolution.com" instead of "paypal.com"',
+      'Generic greeting instead of account holder name',
       'Creates fear with account limitation threat',
-      'Suspicious verification URL',
-      '24-hour deadline pressure tactic'
+      'Suspicious transaction ID format',
+      'Urgent 10-day deadline pressure',
+      'URL doesn\'t match official PayPal dispute system'
     ],
-    difficulty: 'medium'
+    difficulty: 'medium',
+    screenshot: 'https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg'
   },
-  
-  // Hard Level - Spear Phishing
+  {
+    id: 'medium-3',
+    type: 'email',
+    title: 'Legitimate Google Security Alert',
+    content: `From: Google <no-reply@accounts.google.com>
+To: user@gmail.com
+Subject: Security alert for your Google Account
+
+Hi John,
+
+We noticed a new sign-in to your Google Account on a Windows device. If this was you, you don't need to do anything. If not, we'll help you secure your account.
+
+Device: Windows 10 • Chrome
+Location: San Francisco, CA, USA (based on IP address)
+Time: December 15, 2024, 2:30 PM PST
+
+You can also see security activity at https://myaccount.google.com/security
+
+You received this email to let you know about important changes to your Google Account and services.
+
+© 2024 Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA`,
+    isPhishing: false,
+    explanation: 'This is a legitimate Google security notification with proper branding and official links.',
+    indicators: [
+      'Official Google domain (accounts.google.com)',
+      'Personalized greeting with actual name',
+      'Specific device and location information',
+      'Official Google security URL',
+      'Professional formatting with Google footer',
+      'No urgent action required or threats'
+    ],
+    difficulty: 'medium',
+    screenshot: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg'
+  },
+  {
+    id: 'medium-4',
+    type: 'website',
+    title: 'Fake Apple ID Login',
+    content: `Apple ID
+Sign In
+
+Apple ID
+[____________________]
+
+Password
+[____________________]
+
+☐ Remember me
+
+[Sign In →]
+
+Forgot Apple ID or password?
+
+Create Your Apple ID
+
+URL: https://appleid.apple.com-verification.secure-login.net/account/signin`,
+    isPhishing: true,
+    explanation: 'This fake Apple login page uses domain spoofing to appear legitimate.',
+    indicators: [
+      'Domain is "secure-login.net" not "apple.com"',
+      'Subdomain spoofing with "appleid.apple.com" prefix',
+      'URL structure designed to deceive quick glances',
+      'Missing official Apple security features',
+      'Suspicious domain extension and path'
+    ],
+    difficulty: 'medium',
+    screenshot: 'https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg'
+  },
+
+  // Hard Level - Spear Phishing & Advanced Attacks
   {
     id: 'hard-1',
     type: 'email',
-    title: 'IT Department Update',
-    content: `From: IT Support <it-support@yourcompany.com>
-To: employees@yourcompany.com
-Subject: Mandatory Security Update - Action Required
+    title: 'CEO Fraud / Business Email Compromise',
+    content: `From: Robert Johnson <robert.johnson@yourcompany.com>
+To: finance@yourcompany.com
+Subject: Urgent Wire Transfer - Confidential Acquisition
 
-Dear Team,
+Sarah,
 
-As part of our ongoing security improvements, all employees must update their system passwords by end of day today.
+I'm currently in meetings with our legal team regarding the confidential acquisition we discussed last month. I need you to process an urgent wire transfer to secure the deal.
 
-Please log into the employee portal using the link below to complete your mandatory password update:
+Amount: $89,500
+Recipient: Meridian Capital Partners LLC
+Account: 4847291038475629
+Routing: 021000021
+Reference: Project Atlas - Q4 Acquisition
 
-Employee Portal: https://yourcompany.employee-security-update.com/portal
+This needs to be completed before market close today. Please confirm once the transfer is initiated. Do not discuss this with anyone else on the team until the announcement.
 
-This update is required for compliance with our new security policy. Failure to complete this update may result in temporary account suspension.
-
-For questions, contact IT at ext. 4455.
+The board is counting on us to close this quietly.
 
 Best regards,
-IT Security Team
-YourCompany Inc.`,
+Robert Johnson
+CEO, YourCompany Inc.
+Mobile: +1 (555) 123-4567`,
     isPhishing: true,
-    explanation: 'Sophisticated spear-phishing targeting company employees with realistic context.',
+    explanation: 'This is a sophisticated Business Email Compromise (BEC) attack impersonating the CEO.',
     indicators: [
-      'Domain looks official but has extra subdomain',
-      'Creates urgency with end-of-day deadline',
-      'Uses company-specific terminology',
-      'Threatens consequences for non-compliance',
-      'URL doesn\'t match company\'s actual domain structure'
+      'Creates urgency with "before market close today"',
+      'Requests secrecy ("do not discuss with anyone")',
+      'Uses company-specific terminology and names',
+      'Unusual request for direct wire transfer',
+      'Appeals to authority and company loyalty',
+      'May be sent from compromised or spoofed email'
     ],
-    difficulty: 'hard'
+    difficulty: 'hard',
+    screenshot: 'https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg'
   },
   {
     id: 'hard-2',
     type: 'email',
-    title: 'Google Workspace Admin',
-    content: `From: Google Workspace <noreply@google.com>
+    title: 'Sophisticated LinkedIn Phishing',
+    content: `From: LinkedIn <security@linkedin.com>
+To: professional@email.com
+Subject: Your LinkedIn account shows unusual activity
+
+Hello Sarah,
+
+We've detected some unusual activity on your LinkedIn account that requires your immediate attention.
+
+Recent activity:
+• Login from new device: iPhone 13 Pro (San Jose, CA)
+• Profile viewed by 47 recruiters from Fortune 500 companies
+• 3 new connection requests from senior executives
+
+To ensure your account security and maintain access to these valuable networking opportunities, please verify your account credentials.
+
+Secure your account: https://linkedin.com.account-security.verify-now.net/checkpoint
+
+This verification will also unlock premium insights about who's been viewing your profile, including hiring managers from:
+• Google • Microsoft • Apple • Amazon
+
+Please complete this verification within 24 hours to maintain your professional network access.
+
+Best regards,
+LinkedIn Security Team`,
+    isPhishing: true,
+    explanation: 'This sophisticated attack combines security concerns with professional FOMO to steal credentials.',
+    indicators: [
+      'Fake domain "verify-now.net" despite appearing to be linkedin.com',
+      'Uses professional anxiety and FOMO tactics',
+      'Mixes legitimate security language with suspicious urgency',
+      'Promises exclusive benefits to encourage clicking',
+      '24-hour deadline creates pressure',
+      'URL structure designed to deceive (linkedin.com.account-security...)'
+    ],
+    difficulty: 'hard',
+    screenshot: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg'
+  },
+  {
+    id: 'hard-3',
+    type: 'email',
+    title: 'Legitimate Microsoft 365 Admin Alert',
+    content: `From: Microsoft 365 <no-reply@email.microsoftonline.com>
 To: admin@yourcompany.com
-Subject: Security Alert - New Device Sign In
+Subject: Action required: User sign-in risk detected
 
 Hello Administrator,
 
-A new device has signed into your Google Workspace account:
+We've detected a sign-in to your Microsoft 365 tenant that our security systems have flagged as potentially risky.
 
-Device: iPhone 14 Pro
-Location: San Francisco, CA, USA
-Time: Today at 2:45 PM PST
-IP Address: 192.168.1.105
+User: john.smith@yourcompany.com
+Risk level: Medium
+Location: Toronto, Canada
+Device: Windows 11 • Edge Browser
+Time: December 15, 2024 at 3:45 PM EST
 
-If this was you, no action is needed. If you don't recognize this activity, please secure your account immediately by reviewing recent activity.
+Recommended actions:
+• Review the user's recent activity in the Security & Compliance Center
+• Consider requiring multi-factor authentication for this user
+• Monitor for any unusual file access or sharing
 
-Review Account Activity
-https://accounts.google.com/security-activity
+View full details in the Microsoft 365 Security Center:
+https://security.microsoft.com/alerts
 
-The Google Accounts team`,
+This is an automated message from Microsoft 365 Security. You're receiving this because you're listed as a security administrator for your organization.
+
+Microsoft Corporation
+One Microsoft Way, Redmond, WA 98052`,
     isPhishing: false,
-    explanation: 'This is a legitimate Google security notification with proper formatting and official branding.',
+    explanation: 'This is a legitimate Microsoft 365 security alert with proper formatting and official branding.',
     indicators: [
-      'Official Google domain (google.com)',
-      'Professional formatting and language',
-      'Includes specific device and location info',
-      'Proper Google branding and tone',
-      'Links to official Google security pages',
-      'Doesn\'t request sensitive information'
+      'Official Microsoft domain (email.microsoftonline.com)',
+      'Specific user and technical details',
+      'Professional security terminology',
+      'Official Microsoft 365 Security Center URL',
+      'Proper Microsoft corporate footer',
+      'No urgent action demanded, just recommendations'
     ],
-    difficulty: 'hard'
+    difficulty: 'hard',
+    screenshot: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg'
+  },
+  {
+    id: 'hard-4',
+    type: 'email',
+    title: 'Advanced Tax Scam',
+    content: `From: Internal Revenue Service <notices@irs.gov.tax-compliance.net>
+To: taxpayer@email.com
+Subject: Final Notice: Tax Compliance Verification Required - Case #IRS-2024-TC-891047
+
+Dear Taxpayer,
+
+This is your final notice regarding discrepancies found in your 2023 tax return filing. Our automated systems have flagged your return for immediate compliance verification.
+
+Case Number: IRS-2024-TC-891047
+Tax Year: 2023
+Amount in Question: $3,247.89
+Status: URGENT REVIEW REQUIRED
+
+Failure to complete this verification within 72 hours will result in:
+• Immediate tax lien placement on your assets
+• Wage garnishment proceedings
+• Potential criminal tax evasion charges
+
+To resolve this matter immediately and avoid legal action:
+
+1. Verify your identity: https://irs.gov.tax-compliance.net/verify/case-891047
+2. Provide supporting documentation for questioned deductions
+3. Complete payment arrangement if additional taxes are owed
+
+This matter requires immediate attention. Do not ignore this notice.
+
+Internal Revenue Service
+Tax Compliance Division
+Philadelphia, PA 19255`,
+    isPhishing: true,
+    explanation: 'The IRS never initiates contact via email and this uses fear tactics with fake legal threats.',
+    indicators: [
+      'IRS never contacts taxpayers via email initially',
+      'Fake domain "tax-compliance.net" added to irs.gov',
+      'Creates extreme fear with criminal charges threat',
+      'Urgent 72-hour deadline pressure',
+      'Requests immediate online verification',
+      'Uses official-sounding case numbers and terminology'
+    ],
+    difficulty: 'hard',
+    screenshot: 'https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg'
+  },
+  {
+    id: 'hard-5',
+    type: 'sms',
+    title: 'Sophisticated Banking Trojan',
+    content: `SMS from: BankOfAmerica
+
+Security Alert: We've detected suspicious activity on your account ending in 4829.
+
+Recent transaction: $2,847.99 at "AMAZON PRIME SERVICES"
+
+If you did not authorize this transaction, please verify your account immediately:
+
+https://bankofamerica.com.security-verification.online/mobile
+
+Your account will be temporarily restricted until verification is complete.
+
+Text STOP to opt out of alerts.`,
+    isPhishing: true,
+    explanation: 'This sophisticated SMS phishing uses realistic transaction details and official-looking sender.',
+    indicators: [
+      'Sender shows "BankOfAmerica" but may be spoofed',
+      'Domain "security-verification.online" is not bankofamerica.com',
+      'Uses realistic transaction amount and merchant',
+      'Creates urgency with account restriction threat',
+      'URL designed to look official with bankofamerica.com prefix',
+      'Real banks use official short codes, not spoofed names'
+    ],
+    difficulty: 'hard',
+    screenshot: 'https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg'
+  },
+
+  // Additional Medium Level Examples
+  {
+    id: 'medium-5',
+    type: 'email',
+    title: 'Fake Netflix Suspension',
+    content: `From: Netflix <account@netflix-billing.com>
+To: subscriber@email.com
+Subject: Your Netflix account has been suspended
+
+Hi there,
+
+We're having trouble with your current billing information. Your Netflix account has been placed on hold.
+
+To keep watching, please update your payment method within 48 hours.
+
+Update Payment Method: https://netflix-billing.com/account/update
+
+Current plan: Premium - $15.49/month
+Account status: Suspended
+Last payment: Failed on Dec 13, 2024
+
+If you don't update your payment information, your account will be permanently closed and you'll lose access to your viewing history and saved shows.
+
+Questions? Visit our Help Center.
+
+The Netflix Team`,
+    isPhishing: true,
+    explanation: 'Netflix uses official domains and would never threaten permanent closure for billing issues.',
+    indicators: [
+      'Fake domain "netflix-billing.com" instead of "netflix.com"',
+      'Creates fear with permanent account closure threat',
+      'Generic greeting instead of account holder name',
+      '48-hour deadline creates urgency',
+      'Suspicious billing domain separate from main Netflix site',
+      'Real Netflix handles billing through official app/website'
+    ],
+    difficulty: 'medium',
+    screenshot: 'https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg'
+  },
+  {
+    id: 'medium-6',
+    type: 'email',
+    title: 'Legitimate Bank Statement',
+    content: `From: Chase Bank <statements@chase.com>
+To: customer@email.com
+Subject: Your December 2024 statement is ready
+
+Dear John Smith,
+
+Your Chase checking account statement for December 2024 is now available.
+
+Account: Chase Total Checking (...4829)
+Statement Period: December 1-31, 2024
+Ending Balance: $2,847.32
+
+View your statement: https://secure.chase.com/statements
+
+You can also view your statement anytime by signing into chase.com or using the Chase Mobile app.
+
+Thank you for banking with Chase.
+
+JPMorgan Chase Bank, N.A.
+Member FDIC`,
+    isPhishing: false,
+    explanation: 'This is a legitimate bank statement notification with proper Chase branding and security.',
+    indicators: [
+      'Official Chase domain (statements@chase.com)',
+      'Personalized with actual account holder name',
+      'Proper account number format (partial with ...)',
+      'Official Chase URL (secure.chase.com)',
+      'Professional banking language and formatting',
+      'Includes proper bank regulatory information (FDIC)'
+    ],
+    difficulty: 'medium',
+    screenshot: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg'
   }
 ];

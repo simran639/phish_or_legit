@@ -17,8 +17,8 @@ export function GameMenu({ onStartGame, onShowLeaderboard, onShowBadges }: GameM
           Phish or Legit?
         </h1>
         <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
-          Test your cybersecurity skills by identifying phishing attempts in emails, SMS, and websites. 
-          Learn to spot the red flags that keep you safe online.
+          Master cybersecurity by identifying real-world phishing attempts! Learn to spot sophisticated scams, 
+          fake login pages, and social engineering tactics used by actual cybercriminals.
         </p>
       </div>
 
@@ -26,9 +26,9 @@ export function GameMenu({ onStartGame, onShowLeaderboard, onShowBadges }: GameM
         <h2 className="text-2xl font-bold text-white mb-6 text-center">Select Difficulty</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {[
-            { key: 'easy', label: 'Easy', desc: 'Obvious scams' },
-            { key: 'medium', label: 'Medium', desc: 'Fake login pages' },
-            { key: 'hard', label: 'Hard', desc: 'Spear phishing' },
+            { key: 'easy', label: 'Easy', desc: 'Nigerian princes & obvious scams' },
+            { key: 'medium', label: 'Medium', desc: 'Fake logins & billing scams' },
+            { key: 'hard', label: 'Hard', desc: 'CEO fraud & advanced attacks' },
             { key: 'mixed', label: 'Mixed', desc: 'All levels' }
           ].map(({ key, label, desc }) => (
             <button
@@ -99,10 +99,11 @@ export function GameMenu({ onStartGame, onShowLeaderboard, onShowBadges }: GameM
           <Info className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
           <div className="text-white/90">
             <h3 className="font-semibold mb-2">How to Play</h3>
-            <ul className="space-y-1 text-sm">
-              <li>• Review each email, SMS, or website carefully</li>
-              <li>• Look for suspicious links, spelling errors, and urgency tactics</li>
-              <li>• Choose "Phishing" or "Legitimate" based on your analysis</li>
+                <li>• 📧 Analyze real-world emails, SMS messages, and websites</li>
+                <li>• 🔍 Look for suspicious domains, urgency tactics, and social engineering</li>
+                <li>• 🎯 Choose "Phishing" or "Legitimate" based on your analysis</li>
+                <li>• 📚 Learn from detailed explanations of actual attack techniques</li>
+                <li>• 🏆 Unlock achievements as you master cybersecurity skills</li>
               <li>• Learn from detailed feedback to improve your skills</li>
             </ul>
           </div>
