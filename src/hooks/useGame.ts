@@ -52,7 +52,8 @@ export function useGame() {
   const makeChoice = (isPhishing: boolean) => {
     if (!gameState.currentItem || !gameState.isGameActive || gameState.showFeedback) return;
 
-    const correct = isPhishing;
+    // FIX: Compare user's choice to the item's isPhishing property
+    const correct = isPhishing === gameState.currentItem.isPhishing;
     const newScore = gameState.score + (correct ? 10 : 0) + (gameState.streak >= 5 ? 5 : 0);
     const newStreak = correct ? gameState.streak + 1 : 0;
 
