@@ -4,10 +4,10 @@ export const badges: Badge[] = [
   {
     id: 'eagle-eye',
     name: 'Eagle Eye',
-    description: 'Achieve 100% accuracy in a game session',
+    description: 'Achieve 100% accuracy in a complete game session',
     icon: 'Eye',
     unlocked: false,
-    requirement: '100% accuracy'
+    requirement: 'Perfect accuracy (10+ questions)'
   },
   {
     id: 'fast-responder',
@@ -28,10 +28,10 @@ export const badges: Badge[] = [
   {
     id: 'phish-hunter',
     name: 'Phish Hunter',
-    description: 'Correctly identify 50 phishing attempts',
+    description: 'Correctly identify 25 phishing attempts',
     icon: 'Shield',
     unlocked: false,
-    requirement: '50 phishing detected'
+    requirement: '25 phishing detected'
   },
   {
     id: 'security-expert',
@@ -48,5 +48,29 @@ export const badges: Badge[] = [
     icon: 'Timer',
     unlocked: false,
     requirement: '15+ in Timed Mode'
+  },
+  {
+    id: 'scam-buster',
+    name: 'Scam Buster',
+    description: 'Identify 5 Nigerian Prince scams correctly',
+    icon: 'AlertTriangle',
+    unlocked: false,
+    requirement: '5 advance-fee scams'
+  },
+  {
+    id: 'url-detective',
+    name: 'URL Detective',
+    description: 'Spot 10 suspicious URLs in phishing attempts',
+    icon: 'Link',
+    unlocked: false,
+    requirement: '10 malicious URLs detected'
+  },
+  {
+    id: 'social-engineer-stopper',
+    name: 'Social Engineer Stopper',
+    description: 'Resist 15 social engineering tactics',
+    icon: 'Users',
+    unlocked: false,
+    requirement: '15 social engineering attempts'
   }
 ];
